@@ -50,3 +50,30 @@ npm i
 ```:shell
 npm run dev
 ```
+
+### ターミナルに表示されているURLをブラウザで開いて動作確認する
+
+「Hello Hono!」と表示されていることが確認できればOK
+
+### エンドポイントの追加
+
+```:javascript
+app.get('/health', (c) => c.text('health check ok'))
+```
+
+```:javascript
+app.get('/users/:id', (c) => {
+  const id = c.req.param('id')
+  return c.json({
+      'user id': id
+  })
+})
+```
+
+### ミドルウェアの追加
+
+```:javascript
+import { logger } from 'hono/logger'
+
+app.use('*', logger())
+```
