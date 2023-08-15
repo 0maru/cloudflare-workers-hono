@@ -77,3 +77,11 @@ import { logger } from 'hono/logger'
 
 app.use('*', logger())
 ```
+
+### デプロイ
+
+```:shell
+npm run deploy
+```
+
+デプロイしたらプレビューでエンドポイントにアクセスしてみる
