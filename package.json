@@ -9,5 +9,8 @@
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20230628.0",
     "wrangler": "^3.1.2"
+  },
+  "overrides": {
+    "workers": "v1.20230801.0"
   }
 }
