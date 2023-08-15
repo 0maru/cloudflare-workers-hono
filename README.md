@@ -1,1 +1,8 @@
-# cloudflare-workers-hono
+```
+npm install
+npm run dev
+```
+
+```
+npm run deploy
+```
