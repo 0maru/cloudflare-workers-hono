@@ -2,6 +2,11 @@ import { Hono } from 'hono'
 import { logger } from 'hono/logger'
 import { prettyJSON } from 'hono/pretty-json'
 
+export interface Env {
+  DB: D1Database;
+}
+
+
 const app = new Hono()
 
 app.use('*', logger(), prettyJSON())

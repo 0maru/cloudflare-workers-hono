@@ -85,3 +85,23 @@ npm run deploy
 ```
 
 デプロイしたらプレビューでエンドポイントにアクセスしてみる
+
+
+### D1 の作成
+
+```:shell
+npx wrangler d1 cloudflare-d1-sample
+```
+
+実行してログインしたあとターミナルに表示される下記のテキストを`wrangler.toml` に貼り付ける
+
+```
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "cloudflare-d1-sample"
+database_id = "xxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+```
+
+```
+npm install --save-dev @cloudflare/workers-types
+```

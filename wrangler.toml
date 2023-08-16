@@ -1,2 +1,7 @@
 name = "my-app"
 compatibility_date = "2023-01-01"
+
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "cloudflare-d1-sample"
+database_id = "a944eb54-8939-44ce-929b-c8e754a0b82a"
