@@ -74,8 +74,9 @@ app.get('/users/:id', (c) => {
 
 ```:javascript
 import { logger } from 'hono/logger'
+import { prettyJSON } from 'hono/pretty-json'
 
-app.use('*', logger())
+app.use('*', logger(), prettyJSON())
 ```
 
 ### デプロイ
@@ -185,3 +186,37 @@ curl 'http://127.0.0.1:8787/messages' \
     "message": "test"
 }'
 ```
+
+### D1 にスキーマと初期データを反映する
+
+```:shell
+wrangler d1 execute cloudflare-d1-sample --file=./migration.sql
+```
+
+### Workers のデプロイ
+
+```:shell
+npm run deploy
+```
+
+### D1にPOSTリクエストでデータを登録する
+
+```:curl
+curl 'https://DOMAIN/messages' \
+--header 'Content-Type: application/json' \
+--data '{
+    "message": "test"
+}'
+```
+
+```:curl
+curl 'https://my-app.0maru-dev9733.workers.dev/messages' \
+--header 'Content-Type: application/json' \
+--data '{
+    "message": "test"
+}'
+```
+
+### /messages API にアクセスしてデータを見る
+
+ブラウザで開いてください

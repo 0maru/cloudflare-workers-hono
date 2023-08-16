@@ -8,9 +8,7 @@ type Env = {
 
 const app = new Hono<{ Bindings: Env }>()
 
-// app.use('*', async (c, next) => {
-//   return next()
-// })
+app.use('*', logger(), prettyJSON())
 
 app.get('/', (c) => c.text('Hello Hono!'))
 
