@@ -124,7 +124,7 @@ INSERT INTO messages (message) VALUES ('First Message');
 ### ローカルにSQLite を作成する
 
 ```:shell
-wrangler d1 execute cloudflare-d1-sample --local --file=./migration.sql
+npx wrangler d1 execute cloudflare-d1-sample --local --file=./migration.sql
 ```
 
 ### メッセージを取得できるエンドポイントを作成する
