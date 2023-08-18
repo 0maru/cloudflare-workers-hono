@@ -90,7 +90,7 @@ npm run deploy
 ### D1 の作成
 
 ```:shell
-npx wrangler d1 cloudflare-d1-sample
+npx wrangler d1 create cloudflare-d1-sample
 ```
 
 ### D1 の設定を追加
