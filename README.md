@@ -190,7 +190,7 @@ curl 'http://127.0.0.1:8787/messages' \
 ### D1 にスキーマと初期データを反映する
 
 ```:shell
-wrangler d1 execute cloudflare-d1-sample --file=./migration.sql
+npx wrangler d1 execute cloudflare-d1-sample --file=./migration.sql
 ```
 
 ### Workers のデプロイ
